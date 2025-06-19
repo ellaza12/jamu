@@ -64,6 +64,11 @@
                                     <li><small>{{ trim($manfaat) }}</small></li>
                                 @endforeach
                             </ul>
+                            <div class="produk-item mt-2">
+                                <small class="text-muted">
+                                    <i class="fas fa-eye me-1"></i> {{ $produk->view }}x dilihat
+                                </small>
+                            </div>
 
                         </div>
                     </div>

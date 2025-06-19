@@ -35,8 +35,9 @@ Route::get('/', function () {
 Route::get('/', [LandingPageController::class, 'index']);
 
 Route::get('/landingpage/detailproduk/{id}', [DetailProdukController::class, 'index'])->name('landingpage.detailproduk');
-
+Route::get('/landingpage/detailproduk/{id}', [LandingPageController::class, 'detailproduk'])->name('landingpage.detailproduk');
 Route::get('/landingpage/detailgaleri/{id}', [DetailGaleriController::class, 'index'])->name('landingpage.detailgaleri');
+Route::get('/landingpage/detailgaleri/{id}', [LandingPageController::class, 'detailgaleri'])->name('landingpage.detailgaleri');
 
 Route::get('/login', [LoginController::class, 'index']);
 Route::post('/login', [LoginController::class, 'login'])->name('login');

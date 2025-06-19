@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Admin\ProfilController;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Admin\ProfilController;
+use Illuminate\Support\Facades\DB;
 
 class LandingPageController extends Controller
 {
@@ -41,5 +42,35 @@ class LandingPageController extends Controller
         $artikel = $this->artikelcontroller->read();
         return view('landingpage.index', compact('profil','about','video','produk','blog','kontak','galeri','artikel'));
     }
+
+  public function detailproduk($id)
+{
+    // Tambahkan view +1
+    DB::table('produk')->where('id', $id)->increment('view');
+
+    // Ambil data produk lengkap dengan kategori
+    $produk = DB::table('produk')
+        ->join('kategori', 'produk.id_kategori', '=', 'kategori.id')
+        ->select('produk.*', 'kategori.nama as nama_kategori')
+        ->where('produk.id', $id)
+        ->first();
+
+    return view('landingpage.detailproduk', compact('produk'));
+}
+
+
+  public function detailgaleri($id)
+{
+    // Tambahkan view +1
+    DB::table('galeri')->where('id', $id)->increment('view');
+
+    // Ambil data galeri lengkap dengan kategori
+    $galeri = DB::table('galeri')
+    ->where('id', $id)
+    ->first();
+
+    return view('landingpage.detailgaleri', compact('galeri'));
+}
+
 
 }

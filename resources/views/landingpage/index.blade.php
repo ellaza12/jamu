@@ -208,9 +208,12 @@
                                 <a class="d-block h5 mb-2">{{ $item->nama }}</a>
                             </div>
                             <div class="d-flex justify-content-center">
-                                <a class="btn btn-outline-primary btn-sm border-2 rounded-pill mb-3" href="{{ route('landingpage.detailproduk', ['id' => $item->id]) }}"
-                                    style="max-width: 150px; width: auto;"> Detail Produk
-                                </a>
+                                <a class="btn btn-outline-primary btn-sm border-2 rounded-pill mb-3"
+                                    href="{{ route('landingpage.detailproduk', ['id' => $item->id]) }}"
+                                    style="max-width: 150px; width: auto;">
+                                    Detail Produk
+                                    </a>
+
                             </div>
                         </div>
                         @endforeach
@@ -259,9 +262,12 @@
                     </div>
                     <h5 class="mb-3">{{ $item->nama }}</h5>
                      <div class="d-flex justify-content-center">
-                                <a class="btn btn-outline-primary btn-sm border-2 rounded-pill mb-3" href="{{ route('landingpage.detailgaleri', ['id' => $item->id]) }}"
-                                    style="max-width: 150px; width: auto;"> Detail Bahan
-                        </a>
+                                 <a class="btn btn-outline-primary btn-sm border-2 rounded-pill mb-3"
+                                    href="{{ route('landingpage.detailgaleri', ['id' => $item->id]) }}"
+                                    style="max-width: 150px; width: auto;">
+                                    Detail Galeri
+                                    </a>
+
                     </div>
                 </div>
                 @endforeach

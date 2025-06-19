@@ -11,7 +11,9 @@ class GaleriController extends Controller
 
     public function read()
     {
-        return DB::table('galeri')->get();
+        return DB::table('galeri')
+            ->orderBy('view', 'desc') 
+            ->get();
     }
 
     public function find($id)

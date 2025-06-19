@@ -10,7 +10,9 @@ class ProdukController extends Controller
 {
      public function read()
     {
-        return DB::table('produk')->get();
+        return DB::table('produk')
+            ->orderBy('view', 'desc') 
+            ->get();
     }
 
     public function find($id)
@@ -113,7 +115,6 @@ class ProdukController extends Controller
 
         return redirect('/admin/produk')->with("success","Data Berhasil Diupdate !");
     }
-
 
      public function delete($id) {
         $produk= DB::table('produk')->where('id',$id)->first();
